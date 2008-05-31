@@ -1,0 +1,8 @@
+<%= 
+"html".tag do
+  "head".tag do
+     stylesheet_link_tag("application") +
+     javascript_include_tag(:defaults) 
+  end + yield
+end
+%>

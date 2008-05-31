@@ -1,0 +1,7 @@
+<%= error_messages_for :task %>
+<%= form('task'){ |form| 
+  form << hidden_field_tag('_method','put')
+  form << collection_select_multiple_tasks(:task, :before_tasks)
+  form << collection_select_multiple_tasks(:task, :after_tasks)
+} %>
+<%= link_to 'Back', main_index_path %>

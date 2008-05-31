@@ -1,0 +1,6 @@
+<%= 
+{:display => 'none'}.to_css(:selector => (1..5).collect{|i| "#servant_created_at_#{i}i" }.join(",")) +
+# {:display => 'none'}.to_css(:selector => "p > select") +
+{"text-decoration" => "none"}.to_css(:selector => "a") +
+{:width => 500}.to_css(:selector => "textarea")
+%>

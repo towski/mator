@@ -1,0 +1,8 @@
+<%= 
+"div".tag(:style => {:margin => "auto", :height => 450}.to_css) do 
+	render(:partial => "servants/servants", :object => @servants)
+end +
+"div".tag(:clear => :both, :display => :block) do
+  render(:partial => "tasks/tasks", :object => @tasks)
+end
+%>

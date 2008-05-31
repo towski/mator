@@ -1,0 +1,15 @@
+<h2><%= @task.name %></h2>
+<div>
+  <h3> Code </h3>
+  <code><%= @task.code.gsub(/\r/,'<br/>') %></code>
+</div>
+<div>
+  <h3> Output </h3>
+  <code><%= @task.output.gsub(/[\r\n][\r\n]/,'<br/>') %></code>
+</div>
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', main_index_path %>
+<div>
+  <h3> Full Code </h3>
+  <code><%= @task.full_code.gsub(/[\r\n][\r\n]/,'<br/>') %></code>
+</div>

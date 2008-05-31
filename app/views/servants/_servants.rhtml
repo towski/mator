@@ -1,0 +1,27 @@
+<%= 
+link_to("new", {:controller => :servants, :action => "new"}) +
+@servants.to_html do |servant|
+  "div".tag(:style => {:margin => 10, :float => "left", :height => 50, :border => ["1px", "solid"].join(" "), :padding => 5, "font-size" => 14}.to_css) do
+    "span".tag(:style => "font-size:#{servant.clicks + 14};") do 
+      link_to(servant.name, servant.protocol + "://" + servant.host, :onClick =>remote_function(:url => {:controller => :servants, :action => :redirect, :id => servant.id})) +
+      "br".tag
+    end +
+    if servant.magic and not servant.magic.empty?
+      if servant.method != "get"
+        form_tag(eval(servant.magic), 
+          :onClick => remote_function(:url => {:controller => :servants, :action => :redirect, :id => servant.id}), 
+          :style => "height:0px") + 
+        hidden_field_tag("password", servant.password) +
+        hidden_field_tag("name", servant.user) +
+        submit_tag(servant.user) + "</form>"
+      else
+        link_to servant.user, eval(servant.magic)
+      end
+    else 
+      servant.user
+    end + 
+    "br".tag +
+    link_to("edit", edit_servant_path(:id => servant.id) , :style => "font-size:9px")
+  end
+end
+%>

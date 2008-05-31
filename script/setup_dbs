@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+puts "dropping databases..."
+puts `rake db:drop RAILS_ENV=development`
+puts `rake db:drop RAILS_ENV=test`
+puts "migrating development db..."
+puts `rake db:migrate RAILS_ENV=development`
+puts "migrating test db..."
+puts `rake db:migrate RAILS_ENV=test`

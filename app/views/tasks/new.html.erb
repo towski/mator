@@ -1,0 +1,7 @@
+<%= 
+form('task') do |form|
+  form << collection_select_multiple_tasks(:task, :before_tasks)
+  form << collection_select_multiple_tasks(:task, :after_tasks)
+end +
+link_to('Back', tasks_path)
+%>

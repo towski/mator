@@ -1,0 +1,2 @@
+<%= form('servant'){ |form| form << hidden_field_tag('_method','put') } %>
+<%= link_to "destroy", servant_path(:id => @servant.id), :method => :delete %>
