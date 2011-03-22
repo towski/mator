@@ -25,3 +25,5 @@ data.each do |name,hash|
     puts "#{i} shoppers"
   end
 end
+
+puts "hey"
